@@ -1,3 +1,8 @@
+variable "environment" {
+    type = "string"
+    default = "test"
+}
+
 variable "s3_bucket_name" {
 
     #default = "dscs-test-bucket"
@@ -5,14 +10,22 @@ variable "s3_bucket_name" {
     type = "string"
 }
 
-variable "s3_tags" {
+#variable "s3_tags" {
 
-    type = "map"
+ #   type = "map"
 
-    default = {
-        created_by = "Terraform"
-        environment = "test"
-    }
+  #  default = {
+  #      created_by = "Terraform"
+  #      environment = "${var.environment}"
+  #  }
+#}
+
+locals {
+   s3_tags = {
+       created_by = "terraform"
+       environment = "${var.environment}"
+   }
+
 }
 
 variable "s3_regions" {
