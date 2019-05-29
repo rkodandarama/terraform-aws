@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "main" {
-    bucket = "RK-test-bucket"
+    bucket = "rk-test-bucket"
     acl = "private"
 
 }
